@@ -98,7 +98,7 @@ app.get('/users/seed', (req, res) => {
 // Index
 app.get('/database', (req, res) => {
     User.find({}).then((users) => {
-        res.render('Index', { users })
+        res.render('users/Index', { users })
     })
     .catch((error) => {
         res.status(400).json({ error });
