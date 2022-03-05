@@ -71,10 +71,6 @@ app.use(express.static('public'));
 // Routes
 /////////////////////////////////////////////
 
-app.get('/', (req, res) => {
-    res.send('Welcome to ExSalelent!!');
-});
-
 // Seed 
 app.get('/users/seed', (req, res) => {
     const starterUsers = [
@@ -114,6 +110,7 @@ app.get('/database', (req, res) => {
 // Create
 
 // Edit
+app.get
 
 // Show
 
