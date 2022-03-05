@@ -2,7 +2,7 @@ const React = require('react');
 
 class DefaultLayout extends React.Component {
     render() {
-        const { users } = this.props;
+        const { customers } = this.props;
         return (
             <html>
                 <head>

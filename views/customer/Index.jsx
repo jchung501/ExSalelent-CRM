@@ -3,15 +3,15 @@ const DefaultLayout = require('../Default.jsx')
 
 class Index extends React.Component {
     render() {
-        const { users } = this.props;
+        const { customers } = this.props;
         return (
             <DefaultLayout>
             <div>
                 {
-                users.map((user) => (
+                customers.map((customer) => (
                     <article>
-                        <a href={`/database/${user._id }`}>
-                            <h2>{user.first_name} - Interested in - {user.interests.join(', ')}</h2>
+                        <a href={`/${customer._id}`}>
+                            <h2>{customer.first_name} - Interested in - {customer.interests.join(', ')}</h2>
                         </a>
                     </article>
                 ))

@@ -7,7 +7,7 @@ const mongoose = require('./connection');
 const { Schema, model } = mongoose; // Object Destructuring
 
 // User Schema
-const userSchema = new Schema({
+const customerSchema = new Schema({
     first_name: String,
     last_name: String,
     phone_number: String,
@@ -20,6 +20,6 @@ const userSchema = new Schema({
 });
 
 // Create User Model
-const User = model('User', userSchema);
+const Customer = model('customer', customerSchema);
 
-module.exports = User;
+module.exports = Customer;
