@@ -11,6 +11,7 @@ const customerSchema = new Schema({
     first_name: String,
     last_name: String,
     phone_number: String,
+    email: String,
     city: String,
     image: String,
     interests: [String],

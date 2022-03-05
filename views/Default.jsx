@@ -26,7 +26,7 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body className='container-fluid'>
                     <header>
-                        <h1 className='text-center'>ExSalelent CRM</h1>
+                        <h1 className='text-center'><u>ExSalelent CRM</u></h1>
                         <main>
                             {this.props.children}
                         </main>

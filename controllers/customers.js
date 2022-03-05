@@ -18,9 +18,9 @@ const router = express.Router();
 // Seed 
 router.get('/seed', (req, res) => {
     const starterCustomer = [
-        { first_name: 'John', last_name: 'Smith', phone_number: '1234567890', city: 'Kansas City', image: 'https://pbs.twimg.com/profile_images/1096958021824073728/sXnh64ww_400x400.jpg', interests: ['Mazda', 'Toyota', 'Acura'] },
-        { first_name: 'Zach', last_name: 'Smith', phone_number: '1234567890', city: 'Cool City', image: 'https://tracywrightcorvo.com/wp-content/uploads/2019/02/business_headshot-3.jpg', interests: ['Mercedes', 'Audi', 'Lexus'] },
-        { first_name: 'Reginald', last_name: 'Smith', phone_number: '1234567890', city: 'London', image: 'https://i.pinimg.com/550x/0a/83/b2/0a83b279b00e78382a52706e7c6b7adc.jpg', interests: ['Lamborghini', 'Ferrari', 'McLaren'] }
+        { first_name: 'John', last_name: 'Smith', phone_number: '1234567890', email: 'johnnysmith@woohoo.com', city: 'Kansas City', image: 'https://pbs.twimg.com/profile_images/1096958021824073728/sXnh64ww_400x400.jpg', interests: ['Mazda', 'Toyota', 'Acura'] },
+        { first_name: 'Zach', last_name: 'Smith', phone_number: '1234567890', email: 'zachariahcrypto@binance.com', city: 'Cool City', image: 'https://tracywrightcorvo.com/wp-content/uploads/2019/02/business_headshot-3.jpg', interests: ['Mercedes', 'Audi', 'Lexus'] },
+        { first_name: 'Reginald', last_name: 'Smith', phone_number: '1234567890', email: 'reginaldsmith3rd@oldmoneyrich.com', city: 'London', image: 'https://i.pinimg.com/550x/0a/83/b2/0a83b279b00e78382a52706e7c6b7adc.jpg', interests: ['Lamborghini', 'Ferrari', 'McLaren'] }
     ];
 
     // Delete all fruits

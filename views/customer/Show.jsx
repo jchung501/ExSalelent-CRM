@@ -1,19 +1,29 @@
 const React = require('react');
 const DefaultLayout = require('../Default.jsx');
 
+const photoSize = {
+    height: '250px',
+    width: '200px',
+}
+
 class Show extends React.Component { 
     render() {
         const {customer} = this.props;
         return (
             <DefaultLayout>
                 <div>
+                    <nav>
+
+                    </nav>
                     <article>
-                        <h1>Customer Information</h1>
-                        <h2>Name: {`${customer.first_name} ${customer.last_name}`}</h2>
-                        <h3>Phone Number: {`${customer.phone_number}`}</h3>
-                        <h3>City: {`${customer.city}`}</h3>
-                        <img src={`${customer.image}`}/>
-                        <h3>Interested In: {`${customer.interests.join(',')}`}</h3>
+                        <h2>Customer Information</h2>
+                        <img style={photoSize} src={`${customer.image}`}/>
+                        <hr/>
+                        <h2>Name - {`${customer.first_name} ${customer.last_name}`}</h2>
+                        <h4>Phone Number - {`${customer.phone_number}`}</h4>
+                        <h4>Email - <a href={`mailto:${customer.email}`}>{customer.email}</a></h4>
+                        <h4>City - {`${customer.city}`}</h4>
+                        <h4>Interested In - {`${customer.interests.join(', ')}`}</h4>
                         <a href={`/${customer._id}/edit`}><button>Edit Information</button></a>
                         <form action={`/${customer._id}?_method=DLETE`} method='POST'>
                             <input type='submit' value='Delete'/>
