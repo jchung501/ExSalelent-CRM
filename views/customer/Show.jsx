@@ -12,20 +12,17 @@ class Show extends React.Component {
         return (
             <DefaultLayout>
                 <div>
-                    <nav>
-
-                    </nav>
                     <article>
                         <h2>Customer Information</h2>
                         <img style={photoSize} src={`${customer.image}`}/>
                         <hr/>
                         <h2>Name - {`${customer.first_name} ${customer.last_name}`}</h2>
-                        <h4>Phone Number - {`${customer.phone_number}`}</h4>
+                        <h4>Phone Number - <a href={`tel:${customer.phone_number}`}>{customer.phone_number}</a></h4>
                         <h4>Email - <a href={`mailto:${customer.email}`}>{customer.email}</a></h4>
                         <h4>City - {`${customer.city}`}</h4>
                         <h4>Interested In - {`${customer.interests.join(', ')}`}</h4>
                         <a href={`/${customer._id}/edit`}><button>Edit Information</button></a>
-                        <form action={`/${customer._id}?_method=DLETE`} method='POST'>
+                        <form action={`/${customer._id}?_method=DELETE`} method='POST'>
                             <input type='submit' value='Delete'/>
                         </form>
                     </article>
