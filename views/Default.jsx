@@ -28,6 +28,10 @@ class DefaultLayout extends React.Component {
                     <header>
                         <h1 className='text-center'><u>ExSalelent CRM</u></h1>
                         <main>
+                        <nav className='nav nav-bar nav-tabs justify-content-center'>
+                            <a className='nav-link nav-item' href='/'>Back to Index</a>
+                            <a className='nav-link nav-item' href='/new'>Add New Customer</a>
+                        </nav>
                             {this.props.children}
                         </main>
                         <footer>
