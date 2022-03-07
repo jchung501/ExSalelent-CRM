@@ -13,6 +13,7 @@ const customerSchema = new Schema({
     phone_number: String,
     email: String,
     city: String,
+    state: String,
     image: String,
     interests: [String],
 },

@@ -20,6 +20,7 @@ class Show extends React.Component {
                         <h4>Phone Number - <a href={`tel:${customer.phone_number}`}>{customer.phone_number}</a></h4>
                         <h4>Email - <a href={`mailto:${customer.email}`}>{customer.email}</a></h4>
                         <h4>City - {`${customer.city}`}</h4>
+                        <h4>State - {`${customer.state}`}</h4>
                         <h4>Interested In - {`${customer.interests.join(', ')}`}</h4>
                         <a href={`/${customer._id}/edit`}><button>Edit Information</button></a>
                         <form action={`/${customer._id}?_method=DELETE`} method='POST'>
