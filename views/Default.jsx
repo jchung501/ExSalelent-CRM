@@ -32,7 +32,7 @@ class DefaultLayout extends React.Component {
                             <a className='nav-link nav-item' href='/'>Back to Index</a>
                             <a className='nav-link nav-item' href='/new'>Add New Customer</a>
                             <div>
-                                <input placeholder='What are you searching for?'/>
+                            <input type='search' placeholder='Search..'/>
                             </div>
                         </nav>
                             {this.props.children}

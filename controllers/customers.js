@@ -107,4 +107,17 @@ router.get('/:id', (req, res) => {
         });
 });
 
+router.get('/search', (req, res) => {
+    const {search} = req.params;
+    Customer.aggregate([
+        {$match: {interests: {search}}}
+    ])
+        .then((search) => {
+            res.render('customer/Results', {search});
+        })
+        .catch((error) => {
+            res.status(400).json({ error });
+        });
+});
+
 module.exports = router;
