@@ -11,7 +11,7 @@ class Index extends React.Component {
                 customers.map((customer) => (
                     <article>
                         <a href={`/${customer._id}`}>
-                            <h2>{customer.first_name} - Interested in - {customer.interests.join(', ')}</h2>
+                            <h2>{customer.first_name} {customer.last_name}</h2>
                         </a>
                     </article>
                 ))
