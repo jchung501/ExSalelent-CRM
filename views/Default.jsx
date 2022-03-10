@@ -1,5 +1,15 @@
 const React = require('react');
 
+const picStyle = {
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '500px',
+    height: '100px',
+}
+
+
+
 class DefaultLayout extends React.Component {
     render() {
         const { customers } = this.props;
@@ -21,19 +31,19 @@ class DefaultLayout extends React.Component {
                     {/* Jquery */}
                     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
                     {/* OUR CSS AND JS */}
-                    <link rel="stylesheet" href="/styles.css"/>
+                    <link rel="stylesheet" href="../css/styles.css"/>
                     <script src="/app.js" defer></script>
                 </head>
                 <body className='container-fluid'>
                     <header>
-                        <h1 className='text-center'><u>ExSalelent CRM</u></h1>
+                        <img style={picStyle} src={'https://i.imgur.com/vrA91gH.png'}/>
                         <main>
-                        <nav className='nav nav-bar nav-tabs justify-content-center'>
+                        <nav className='nav nav-bar justify-content-center'>
                             <a className='nav-link nav-item' href='/'>Back to Index</a>
                             <a className='nav-link nav-item' href='/new'>Add New Customer</a>
-                            <div>
+                            <form>
                             <input type='search' placeholder='Search..'/>
-                            </div>
+                            </form>
                         </nav>
                             {this.props.children}
                         </main>

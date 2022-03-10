@@ -1,12 +1,15 @@
 const React = require('react');
 const DefaultLayout = require('../Default.jsx')
 
+
+
 class Index extends React.Component {
     render() {
         const { customers } = this.props;
         return (
             <DefaultLayout>
             <div>
+                <h1 className='text-center'><u>Member Index</u></h1>
                 {
                 customers.map((customer) => (
                     <article>
