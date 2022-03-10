@@ -109,7 +109,7 @@ router.get('/:id', (req, res) => {
 
 router.get('/search', (req, res) => {
     const {search} = req.params;
-    Customer.aggregate([
+    Customer.findById([
         {$match: {interests: {search}}}
     ])
         .then((search) => {

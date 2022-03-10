@@ -11,7 +11,7 @@ class Show extends React.Component {
         const {customer} = this.props;
         return (
             <DefaultLayout>
-                <div>
+                <div className='text-center'>
                     <article>
                         <h2>Customer Information</h2>
                         <img style={photoSize} src={`${customer.image}`}/>
