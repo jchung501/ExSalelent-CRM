@@ -1,4 +1,4 @@
-# ExSalelent CRM
+# <center>ExSalelent CRM</center>
 
 <p align='center'>
 <img src='./images/exsalelent-logo2.png' width='500px' height='100px'></p>
