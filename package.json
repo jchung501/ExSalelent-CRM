@@ -1,4 +1,8 @@
 {
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
+  },
   "name": "exsalelent",
   "version": "1.0.0",
   "description": "A customer relationship manager to help store customer data and help track sale leads",
