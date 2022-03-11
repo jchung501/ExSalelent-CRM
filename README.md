@@ -1,4 +1,4 @@
-# <center>ExSalelent CRM</center>
+# <h1 align='center'>ExSalelent CRM</h1>
 
 <p align='center'>
 <img src='./images/exsalelent-logo2.png' width='500px' height='100px'></p>
