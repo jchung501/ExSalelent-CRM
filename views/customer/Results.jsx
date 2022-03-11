@@ -9,7 +9,7 @@ class Results extends React.Component {
                 <div>
                     <article>
                         <h2>Search Results</h2>
-                        <p></p>
+                        <p>{customer.first_name}</p>
                     </article>
                 </div>
             </DefaultLayout>

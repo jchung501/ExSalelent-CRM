@@ -107,17 +107,27 @@ router.get('/:id', (req, res) => {
         });
 });
 
+// router.get('/search', (req, res) => {
+//     const {searchFor} = req.params;
+//     Customer.find({$search: searchFor})
+//         .then((customer) => {
+//             res.render('customer/Results', { customer });
+//         })
+//         .catch((error) => {
+//             res.status(400).json({ error });
+//         });
+// });
+
 router.get('/search', (req, res) => {
-    const {search} = req.params;
-    Customer.findById([
-        {$match: {interests: {search}}}
-    ])
-        .then((search) => {
-            res.render('customer/Results', {search});
-        })
-        .catch((error) => {
-            res.status(400).json({ error });
-        });
+    const {resultsFor} = req.query;
+    Customer.findOne({ first_name: resultsFor}, (err, foundMatch) => {
+        if(!error) {
+            res.render('customer/Results', {
+                customer: foundMatch});
+        } else {
+            res.status(400).json({err})
+        };
+    });
 });
 
 module.exports = router;

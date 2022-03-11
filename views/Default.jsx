@@ -43,8 +43,8 @@ class DefaultLayout extends React.Component {
                         <nav className='nav nav-bar justify-content-center'>
                             <a className='nav-link nav-item' href='/'>Back to Index</a>
                             <a className='nav-link nav-item' href='/new'>Add New Customer</a>
-                            <form>
-                            <input type='search' placeholder='Search..'/>
+                            <form action='/search' method='GET'>
+                            <input type='text' placeholder='Search..' name='resultsFor'/>
                             </form>
                         </nav>
                             {this.props.children}
