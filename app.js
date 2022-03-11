@@ -8,6 +8,7 @@ const morgan = require('morgan'); // Import Morgan
 const methodOverride = require('method-override'); // Import Method Override
 const customerController = require('./controllers/customers')
 const path = require('path');
+const bcrypt = require('bcryptjs');
 
 /////////////////////////////////////////////
 // App Object Setup
