@@ -1,5 +1,5 @@
 const React = require('react');
-const DefaultLayout = require('../Default.jsx')
+const DefaultLayout2 = require('../Default2.jsx')
 
 
 
@@ -7,7 +7,7 @@ class Index extends React.Component {
     render() {
         const { customers } = this.props;
         return (
-            <DefaultLayout>
+            <DefaultLayout2>
             <div>
                 <h1 className='text-center'><u>Member Index</u></h1>
                 { 
@@ -20,7 +20,7 @@ class Index extends React.Component {
                 ))
                 }
             </div>
-            </DefaultLayout>
+            </DefaultLayout2>
         );
     };
 };

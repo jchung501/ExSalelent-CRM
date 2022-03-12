@@ -10,7 +10,7 @@ const picStyle = {
 
 
 
-class DefaultLayout extends React.Component {
+class DefaultLayout2 extends React.Component {
     render() {
         const { customers } = this.props;
         return (
@@ -42,6 +42,7 @@ class DefaultLayout extends React.Component {
                         <nav className='nav nav-bar justify-content-center'>
                             <a className='nav-link nav-item' href='/customers'>Back to Index</a>
                             <a className='nav-link nav-item' href='/customers/new'>Add New Customer</a>
+                            <a href='/user/logout'><button>Logout</button></a>
                             <form action='/customers/search' method='POST'>
                             <input type='text' placeholder='Search..' name='results'/>
                             </form>
@@ -58,4 +59,4 @@ class DefaultLayout extends React.Component {
     };
 };
 
-module.exports = DefaultLayout;
+module.exports = DefaultLayout2;

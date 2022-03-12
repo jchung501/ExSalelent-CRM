@@ -1,10 +1,10 @@
 const React = require('react');
-const DefaultLayout = require('../Default.jsx');
+const DefaultLayout2 = require('../Default2.jsx');
 
 class New extends React.Component {
     render() {
         return (
-            <DefaultLayout>
+            <DefaultLayout2>
                 <form action='/customers' method='POST'>
                     <fieldset>
                     <legend>New Customer Information</legend>
@@ -19,7 +19,7 @@ class New extends React.Component {
                     </fieldset>
                     <input type='submit' value='New Customer'/>
                 </form>
-            </DefaultLayout>
+            </DefaultLayout2>
         );
     };
 };

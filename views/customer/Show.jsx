@@ -1,5 +1,5 @@
 const React = require('react');
-const DefaultLayout = require('../Default.jsx');
+const DefaultLayout2 = require('../Default2.jsx');
 
 const photoSize = {
     height: '250px',
@@ -10,7 +10,7 @@ class Show extends React.Component {
     render() {
         const {customer} = this.props;
         return (
-            <DefaultLayout>
+            <DefaultLayout2>
                 <div className='text-center'>
                     <article>
                         <h2>Customer Information</h2>
@@ -28,7 +28,7 @@ class Show extends React.Component {
                         </form>
                     </article>
                 </div>
-            </DefaultLayout>
+            </DefaultLayout2>
         );
     };
 };

@@ -1,11 +1,11 @@
 const React = require('react');
-const DefaultLayout = require('../Default.jsx');
+const DefaultLayout2 = require('../Default2.jsx');
 
 class Results extends React.Component { 
     render() {
         const {customers} = this.props;
         return (
-            <DefaultLayout>
+            <DefaultLayout2>
                 <div>
                     <article>
                         <h2>Search Results</h2>
@@ -20,7 +20,7 @@ class Results extends React.Component {
                 }
                     </article>
                 </div>
-            </DefaultLayout>
+            </DefaultLayout2>
         );
     };
 };

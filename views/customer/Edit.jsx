@@ -1,11 +1,11 @@
 const React = require('react');
-const DefaultLayout = require('../Default.jsx')
+const DefaultLayout2 = require('../Default2.jsx')
 
 class Edit extends React.Component {
     render() {
         const { customer } = this.props;
         return (
-            <DefaultLayout>
+            <DefaultLayout2>
                 <html>
                     <form action={`/customers/${customer._id}?_method=PUT`} method="POST">
                         <fieldset>
@@ -22,7 +22,7 @@ class Edit extends React.Component {
                         <input type='submit' value='Submit Update'/>
                     </form>
                 </html>
-            </DefaultLayout>
+            </DefaultLayout2>
         )
     }
 }
