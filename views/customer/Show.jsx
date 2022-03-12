@@ -24,7 +24,7 @@ class Show extends React.Component {
                         <h4>Interested In - {`${customer.interests}`}</h4>
                         <a href={`/customers/${customer._id}/edit`}><button>Edit Information</button></a>
                         <form action={`/customers/${customer._id}?_method=DELETE`} method='POST'>
-                            <input type='submit' value='Delete'/>
+                            <button className='btn btn-outline-danger btn-lg' type='submit' value='Delete'>Delete</button>
                         </form>
                     </article>
                 </div>
