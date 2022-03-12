@@ -10,7 +10,7 @@ class Signup extends React.Component {
                         <fieldset>
                         <legend>New User</legend>
                         <label>USERNAME: <input type="text" name="username" required/></label>
-                        <label>PASSWORD: <input type="password" name="password'" required/>
+                        <label>PASSWORD: <input type="password" name="password" required/>
                         </label>
                         <input type="submit" value="Create Account"/>
                         </fieldset>

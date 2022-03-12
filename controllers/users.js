@@ -22,8 +22,8 @@ router.get('/signup', (req, res) => {
 });
 router.post('/signup', async (req, res) => {
     // encrypt password
-    User.password = await bcrypt.hash(
-        req.body.password, bcrypt.genSalt(10)
+    req.body.password = await bcrypt.hash(
+        req.body.password, await bcrypt.genSalt(10)
     );
     // create New User
     User.create(req.body)
