@@ -7,7 +7,7 @@ class Edit extends React.Component {
         return (
             <DefaultLayout>
                 <html>
-                    <form action={`/${customer._id}?_method=PUT`} method="POST">
+                    <form action={`/customers/${customer._id}?_method=PUT`} method="POST">
                         <fieldset>
                             <legend>Edit {customer.first_name} {customer.last_name}</legend>
                             <label>First Name: <input type='text' name='first_name' placeholder='First Name' defaultValue={customer.first_name}/></label>

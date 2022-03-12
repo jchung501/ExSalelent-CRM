@@ -3,13 +3,21 @@ const DefaultLayout = require('../Default.jsx');
 
 class Results extends React.Component { 
     render() {
-        const {customer} = this.props;
+        const {customers} = this.props;
         return (
             <DefaultLayout>
                 <div>
                     <article>
                         <h2>Search Results</h2>
-                        <p>{customer.first_name}</p>
+                        {
+                        customers.map((customer) => (
+                        <article>
+                        <a href={`/customers/${customer._id}`}>
+                            <h2>{customer.first_name} {customer.last_name}</h2>
+                        </a>
+                        </article>
+                    ))
+                }
                     </article>
                 </div>
             </DefaultLayout>

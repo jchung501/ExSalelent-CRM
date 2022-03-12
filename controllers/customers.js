@@ -36,7 +36,7 @@ router.get('/seed', (req, res) => {
 });
 
 // Index
-router.get('/', (req, res) => {
+router.get('/customers', (req, res) => {
     Customer.find({}).then((customers) => {
         res.render('customer/Index', { customers })
     })
@@ -46,16 +46,16 @@ router.get('/', (req, res) => {
 });
 
 // New
-router.get('/new', (req, res) => {
+router.get('/customers/new', (req, res) => {
     res.render('customer/New');
 });
 
 // Delete
-router.delete('/:id', (req, res) => {
+router.delete('/customers/:id', (req, res) => {
     const { id } = req.params;
     Customer.findByIdAndDelete(id)
         .then (() => {
-            res.redirect('/');
+            res.redirect('/customers');
         })
         .catch((error) => {
             res.status(400).json({ error });
@@ -63,19 +63,25 @@ router.delete('/:id', (req, res) => {
 });
 
 // Update
-router.put('/:id', (req, res) => {
+router.put('/customers/:id', (req, res) => {
     const { id } = req.params;
+    const { interests } = req.body;
+    req.body.interests = interests.split(',')
+    console.log(req.body)
     Customer.findByIdAndUpdate(id, req.body, { new: true })
         .then(() => {
-            res.redirect(`/${id}`);
+            res.redirect(`/customers/${id}`);
         });
 });
 
 // Create
-router.post('/', (req, res) => {
+router.post('/customers', (req, res) => {
+    const { interests } = req.body;
+    req.body.interests = interests.split(',')
+    console.log(req.body)
     Customer.create(req.body)
         .then((createdCust) => {
-            res.redirect(`/${createdCust._id}`);
+            res.redirect(`/customers/${createdCust._id}`);
         })
         .catch((error) => {
             res.status(400).json({ error });
@@ -83,7 +89,7 @@ router.post('/', (req, res) => {
 });
 
 // Edit
-router.get('/:id/edit', (req, res) => {
+router.get('/customers/:id/edit', (req, res) => {
     const { id } = req.params;
     Customer.findById(id)
         .then((customer) => {
@@ -95,9 +101,8 @@ router.get('/:id/edit', (req, res) => {
 });
 
 // Show
-router.get('/:id', (req, res) => {
+router.get('/customers/:id', (req, res) => {
     const { id } = req.params;
-
     Customer.findById(id)
         .then((customer) => {
             res.render('customer/Show', { customer });
@@ -107,26 +112,19 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// router.get('/search', (req, res) => {
-//     const {searchFor} = req.params;
-//     Customer.find({$search: searchFor})
-//         .then((customer) => {
-//             res.render('customer/Results', { customer });
-//         })
-//         .catch((error) => {
-//             res.status(400).json({ error });
-//         });
-// });
-
-router.get('/search', (req, res) => {
-    const {resultsFor} = req.query;
-    Customer.findOne({ first_name: resultsFor}, (err, foundMatch) => {
-        if(!error) {
-            res.render('customer/Results', {
-                customer: foundMatch});
-        } else {
-            res.status(400).json({err})
-        };
+// Search feature
+router.get('/customers/search', (req, res) => {
+    res.render('customer/Results');
+});
+router.post('/customers/search', (req, res) => {
+    const { results } = req.body;
+    console.log(results)
+    Customer.find({interests: {$in: results}})
+        .then((customers) => {
+                res.render('customer/Results', { customers });
+        })
+        .catch((error) => { 
+            res.status(400).json({ error })
     });
 });
 

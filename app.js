@@ -40,7 +40,7 @@ app.use(session({
 // Routes
 /////////////////////////////////////////////
 
-app.use('/customers', CustomerRouter);
+app.use('/', CustomerRouter);
 app.use('/user', UserRouter);
 app.get('/', (req, res) => {
     res.render('Index');

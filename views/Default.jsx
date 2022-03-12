@@ -41,10 +41,10 @@ class DefaultLayout extends React.Component {
                         <img style={picStyle} src={'https://i.imgur.com/vrA91gH.png'}/>
                         <main>
                         <nav className='nav nav-bar justify-content-center'>
-                            <a className='nav-link nav-item' href='/'>Back to Index</a>
-                            <a className='nav-link nav-item' href='/new'>Add New Customer</a>
-                            <form action='/search' method='GET'>
-                            <input type='text' placeholder='Search..' name='resultsFor'/>
+                            <a className='nav-link nav-item' href='/customers'>Back to Index</a>
+                            <a className='nav-link nav-item' href='/customers/new'>Add New Customer</a>
+                            <form action='/customers/search' method='POST'>
+                            <input type='text' placeholder='Search..' name='results'/>
                             </form>
                         </nav>
                             {this.props.children}
