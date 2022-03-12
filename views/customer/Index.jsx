@@ -10,7 +10,7 @@ class Index extends React.Component {
             <DefaultLayout>
             <div>
                 <h1 className='text-center'><u>Member Index</u></h1>
-                {
+                { 
                 customers.map((customer) => (
                     <article>
                         <a href={`/customers/${customer._id}`}>

@@ -27,11 +27,11 @@ middleware(app);
 // Routes
 /////////////////////////////////////////////
 
-app.use('/', CustomerRouter);
 app.use('/user', UserRouter);
-app.get('/', (req, res) => {
+app.get('/notloggedin', (req, res) => {
     res.render('Index');
 });
+app.use('/', CustomerRouter);
 
 /////////////////////////////////////////////
 // Server Listener
