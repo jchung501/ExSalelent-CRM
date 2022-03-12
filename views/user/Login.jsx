@@ -6,7 +6,7 @@ class Login extends React.Component {
         return (
             <DefaultLayout>
                       <div>
-                        <form action="/login" method="post">
+                        <form action="/user/login" method="post">
                         <fieldset>
                             <legend>User Login</legend>
                             <label

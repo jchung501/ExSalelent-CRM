@@ -3,7 +3,7 @@
 /////////////////////////////////////////////
 
 const express = require('express');
-const User = require('../models/user');
+const User = require('../models/user.js');
 const bcrypt = require('bcryptjs');
 
 /////////////////////////////////////////////
@@ -16,47 +16,58 @@ const router = express.Router();
 // Routes
 /////////////////////////////////////////////
 
-// Create User
+// Signup Route
 router.get('/signup', (req, res) => {
-    res.render('customer/Signup');
+    res.render('user/Signup');
 });
-router.post('/signup', (req, res) => {
-    res.send('signup');
+router.post('/signup', async (req, res) => {
+    // encrypt password
+    User.password = await bcrypt.hash(
+        req.body.password, bcrypt.genSalt(10)
+    );
+    // create New User
+    User.create(req.body)
+        .then((user) => {
+            res.redirect('/user/login');
+        })
+        .catch((error) => {
+            res.status(400).json({ error });
+    });
 });
 
-// Show
-router.get('/:id', (req, res) => {
-    const { id } = req.params;
-
-    Customer.findById(id)
-        .then((customer) => {
-            res.render('customer/Show', { customer });
+// Login Route
+router.get('/login', (req, res) => {
+    res.render('user/Login');
+});
+router.post('/login', async (req, res) => {
+    // get data from req body
+    const { username, password } = req.body;
+    // search for user
+    User.findOne({ username })
+        .then(async (user) => {
+            if (user) {
+                const result = await bcrypt.compare(password, user.password);
+                if (result) {
+                    req.session.username = username;
+                    req.session.loggedIn = true;
+                    res.redirect('/customers');
+                } else {
+                    res.json({ error: 'password doesn\'t match'});
+                }
+            } else {
+                res.json({ error: 'user doesn\'t exist' });
+            }
         })
         .catch((error) => {
             res.status(400).json({ error });
         });
 });
 
-// Show Login
-router.get('/login', (req, res) => {
-    res.render('customer/Login');
+// Logout
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        res.redirect('/');
+    });
 });
-router.post('/login', (req, res) => {
-    res.send('login');
-});
-
-
-// router.get('/search', (req, res) => {
-//     const {searchFor} = req.params;
-//     Customer.find({$search: searchFor})
-//         .then((customer) => {
-//             res.render('customer/Results', { customer });
-//         })
-//         .catch((error) => {
-//             res.status(400).json({ error });
-//         });
-// });
-
-
 
 module.exports = router;
