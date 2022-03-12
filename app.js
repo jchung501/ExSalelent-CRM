@@ -6,6 +6,7 @@ require('dotenv').config(); // Load ENV variables
 const express = require('express'); // Import Express
 const morgan = require('morgan'); // Import Morgan
 const methodOverride = require('method-override'); // Import Method Override
+const userController = require('./controllers/users')
 const customerController = require('./controllers/customers')
 const path = require('path');
 const bcrypt = require('bcryptjs');
@@ -31,7 +32,8 @@ app.use(express.static('public'));
 // Routes
 /////////////////////////////////////////////
 
-app.use('/', customerController)
+app.use('/', customerController);
+app.use('/', userController);
 
 /////////////////////////////////////////////
 // Server Listener
