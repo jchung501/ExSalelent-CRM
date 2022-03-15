@@ -17,6 +17,7 @@ This is a CRM CRUD application that is built and catered towards car sales. The 
 
 ## ERD
 
+<p align='center'>
 <img src='./images/exsalelent-ERD.png' width='400px' height='200px'>
 
 ## Heroku Link
