@@ -23,5 +23,7 @@ This is a CRM CRUD application that is built and catered towards car sales. The 
 
 [https://exsalelent-crm.herokuapp.com]
 
+## Trello Board User Stories
 
+[https://trello.com/b/XAf3ashw/user-stories]
 
