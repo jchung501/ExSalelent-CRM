@@ -37,7 +37,7 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body className='container-fluid background'>
                     <header>
-                        <img style={picStyle} src={'https://i.imgur.com/vrA91gH.png'}/>
+                        <img style={picStyle} src={'https://i.imgur.com/OMeJLoe.png'}/>
                         <main>
                         <nav className='nav nav-bar justify-content-center'>
                             <a className='nav-link nav-item' href='/customers'>Back to Index</a>
