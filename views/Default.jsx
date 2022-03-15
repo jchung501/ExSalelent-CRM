@@ -32,10 +32,10 @@ class DefaultLayout extends React.Component {
                     {/* Jquery */}
                     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
                     {/* OUR CSS AND JS */}
-                    <link rel="stylesheet" href="../css/styles.css"/>
+                    <link rel="stylesheet" href="/css/style.css"/>
                     <script src="/app.js" defer></script>
                 </head>
-                <body className='container-fluid'>
+                <body className='container-fluid background'>
                     <header>
                         <img style={picStyle} src={'https://i.imgur.com/vrA91gH.png'}/>
                         <main>
